@@ -14,7 +14,7 @@ exports.handler = async function getDeviceModels(req, res, next) {
 
   const params = {
     headers: req.headers,
-    manufacturer: req.query.manufacturer
+    manufacturer: req.query.brandName
   };
 
   const response = await devicesService.getDeviceModels(req, params);
