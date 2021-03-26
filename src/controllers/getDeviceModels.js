@@ -34,10 +34,10 @@ exports.handler = async function getDeviceModels(req, res, next) {
  function getMapped(jsonData){
     return jsonData.map(getModelsDetails);
   }
-
+  let brand = req.query.brandName.toString()
   let myArr = getMapped(jsonData);
   let fullArray =   {
-    "brand": req.query.brandName,
+    "brand": brand,
     "description": "model name of devices",
     "productSpecCharacteristic": myArr
    }

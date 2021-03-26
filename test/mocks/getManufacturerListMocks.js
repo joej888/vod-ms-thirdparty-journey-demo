@@ -38,21 +38,22 @@ const success = {
 };
 
 const expected = {
-  data: {
-    result: [
-      'Apple',
-      'Samsung',
-      'Huawei',
-      'Lenovo',
-      'Sony Ericsson',
-      'ZTE',
-      'Xiaomi',
-      'Sony',
-      'Nokia',
-      'LG',
-      'Hisense'
-    ]
-  }
+  data:{ "description": "brandName of devices",
+  "name": "devicebrandName",
+  "subCategory": [
+      "Apple",
+      "Samsung",
+      "Huawei",
+      "Lenovo",
+      "Sony Ericsson",
+      "ZTE",
+      "Xiaomi",
+      "Sony",
+      "Nokia",
+      "LG",
+      "Hisense"
+  ]
+}
 };
 
 const failure = {
