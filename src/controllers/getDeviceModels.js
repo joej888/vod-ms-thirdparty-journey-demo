@@ -11,7 +11,6 @@ const getDeviceModelsError = new client.Counter({
 exports.handler = async function getDeviceModels(req, res, next) {
 
   Sentry.info('Beginning getDeviceModels...', {}, sentryCategory);
-
   const params = {
     headers: req.headers,
     manufacturer: req.query.brandName
@@ -20,14 +19,31 @@ exports.handler = async function getDeviceModels(req, res, next) {
   const response = await devicesService.getDeviceModels(req, params);
   const jsonData = response.data.result
 
-    if (!response.ok) {
+  function getModelsDetails(model){
+    let modelDetails = {
+      "name": "model",
+      "valueType": "string",
+      "productSpecCharacteristicValue":
+        {
+          "value": model.model,
+      }
+    }
+    return modelDetails
+  }
+
+ function getMapped(jsonData){
+    return jsonData.map(getModelsDetails);
+  }
+
+  let myArr = getMapped(jsonData);
+
+  if (!response.ok) {
     getDeviceModelsError.inc();
     return next(response.error);
   }
 
   res.status(response.status);
-  res.json(jsonData);
-
+  res.json(myArr);
   return next();
 };
 
