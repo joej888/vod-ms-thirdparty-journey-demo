@@ -36,6 +36,11 @@ exports.handler = async function getDeviceModels(req, res, next) {
   }
 
   let myArr = getMapped(jsonData);
+  let fullArray =   {
+    "brand": req.query.brandName,
+    "description": "model name of devices",
+    "productSpecCharacteristic": myArr
+   }
 
   if (!response.ok) {
     getDeviceModelsError.inc();
@@ -43,7 +48,7 @@ exports.handler = async function getDeviceModels(req, res, next) {
   }
 
   res.status(response.status);
-  res.json(myArr);
+  res.json(fullArray);
   return next();
 };
 
