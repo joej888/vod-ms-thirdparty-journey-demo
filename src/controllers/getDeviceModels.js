@@ -26,7 +26,6 @@ exports.handler = async function getDeviceModels(req, res, next) {
   }
 
   res.status(response.status);
-  //res.json(response.data);
   res.json(jsonData);
 
   return next();
