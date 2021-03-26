@@ -1,2 +1,2 @@
 :toc: left
-= vod-ms-app-devices
+= vod-ms-thirdparty-journey-demo

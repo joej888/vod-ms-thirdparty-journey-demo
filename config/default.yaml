@@ -2,7 +2,7 @@
 
 # values in the swagger hash are system configuration for swagger-node
 swagger:
-  basePath: /vod-ms-app-devices
+  basePath: /vod-ms-thirdparty-journey-demo
   fittingsDirs: [ api/fittings ]
   defaultPipe: null
   swaggerControllerPipe: swagger_controllers  # defines the standard processing pipe for controllers

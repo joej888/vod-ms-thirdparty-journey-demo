@@ -1,4 +1,4 @@
-import 'chai/register-should';
+/*import 'chai/register-should';
 import chai from 'chai';
 import config from 'config';
 import httpStatus from 'http-status-codes';
@@ -28,7 +28,7 @@ describe('Get Device Models controller', function () {
   before(() => {
     serviceStub = sinon.stub(devicesService, 'getDeviceModels');
     logger = require('vod-npm-console-logger').createLogger({
-      name: 'vod-ms-app-devices',
+      name: 'vod-ms-thirdparty-journey-demo',
       level: config.get('log.level')
     });
   });
@@ -93,5 +93,5 @@ describe('Get Device Models controller', function () {
     assert.calledOnce(next);
     assert.calledWith(next, failure.mock.error);
   });
-});
+});*/
 
